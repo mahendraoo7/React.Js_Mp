@@ -8,7 +8,7 @@ const Header = () => {
       <nav classNameName="bg-white border-gray-200">
   <div className="max-w-screen-xl flex items-center justify-between p-4">
     <a href="#" className="flex items-center space-x-3 ">
-        <img src={img4} className="" alt="Not" />
+        <img src={img4} className="w-10" alt="Not" />
         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">logo</span>
     </a>
     <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
