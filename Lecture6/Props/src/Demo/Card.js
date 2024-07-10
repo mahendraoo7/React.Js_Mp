@@ -15,9 +15,14 @@ const CardMain = () => {
         border-l-[160px] border-l-black
         border-b-[125px] border-b-transparent mt-[-180px] ml-[30px]"></div>
 
-        <div className='absolute mt-[-80px] ml-[150px] '>
-            <h1 className='text-[20px] font-bold'> THEMAHENDRA </h1>
+        <div className='absolute mt-[-50px] ml-[140px] '>
+            <h1 className='text-[20px] font-bold'> MAHINDRA</h1>
         </div>
+   
+            <div class="w-[10px] h-[10px] absolute">
+             <img src="./Assets/20210809125610_Mahindra_Logo_1.jpg" alt="" />
+           </div>
+
 
         <div class="w-0 h-0 
         border-t-[200px] border-t-transparent
