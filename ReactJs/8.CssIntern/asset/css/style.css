@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    max-width: 1200px;
+    max-width: calc(100vw - 10vw);
+    margin: auto;
+    height: 100vh;
+    background-color: green;
+}
+
+.box{
+    width: 100%;
+    height:100lvh;
+    overflow: hidden;
+    /* background-color: purple; */
+    /* background-image: url(../image/pexels-efrem.jpg); */
+    border:2px solid black;
+    /* background-position: center; */
+}
+
+h1{
+    font-size: 45px;
+}
+

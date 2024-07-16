@@ -7,7 +7,6 @@ function App() {
       <Header title="TODOLIST " serchBar={true}/>
 
       <Footer/>
-
       </div>
   );
 }
