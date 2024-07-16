@@ -5,7 +5,7 @@ export function Item({chek,name}) {
 
     if(chek) {
         return <li>{name}</li>
-    }
+    }     
 
     return <li><del>{name}</del></li>
    
