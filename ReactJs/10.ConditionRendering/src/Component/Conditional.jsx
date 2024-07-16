@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 export function Item({chek,name}) {
 
     if(chek) {
@@ -8,15 +7,14 @@ export function Item({chek,name}) {
     }     
 
     return <li><del>{name}</del></li>
-   
 }
 
- 
  const Conditional = () => {
    return (
-     <div>
-         <h1 className=''> React Conditionalk Rendering </h1>
-         <ul className='mt-7'></ul>
+     <div className='ml-10 ring-2 ring-slate-300 w-[1200px] h-[200px]'>
+         <h1 className='flex justify-center mt-6 text-2xl w-[1300px] text-blue-500'> React Conditionalk Rendering </h1>
+         <ul className='font-semibold ml-9 list-disc space-y-1'>
+
           <Item chek={true} name="leptop"></Item>
           <Item chek={true} name="cemera"></Item>
           <Item chek={false} name="Ac"></Item>
@@ -24,9 +22,12 @@ export function Item({chek,name}) {
           <Item chek={false} name="Harddisk"></Item>
           <Item chek={true} name="Phones"></Item>
 
+          </ul>
+          
+
         </div>
    )
  }
- 
- export default Conditional
+
+ export default Conditional 
  
