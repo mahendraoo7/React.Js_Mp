@@ -1,10 +1,12 @@
 import React from 'react'
 import Layout from './Page/Layout'
+import Navbar2 from './Component/Dropdown'
 
 const App = () => {
   return (
     <div>
-        <Layout/>
+        {/* <Layout/>  */}
+        <Navbar2/>
     </div>
   )
 }
