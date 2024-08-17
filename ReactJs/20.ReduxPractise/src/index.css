@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .heading{
+      @apply text-center py-4 bg-gradient-to-b from-orange-600 via-white to-green-700 text-4xl text-white h-screen flex items-center justify-center font-extrabold italic
+    }
+  }
+
+  *{
+    color:gray  !important
+  } 
