@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  .animated-button {
+    background-color: #008CBA;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 5px ;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px 0 #006699;
+    width: 80px;
+    animation: example 1s infinite;
+  }
+  
+
+  .animated-button2 {
+    background-color: red;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 5px ;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px 0 #006699;
+    width: 80px;
+    animation: example 1s infinite;
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
