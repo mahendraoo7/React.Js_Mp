@@ -11,7 +11,7 @@ const Aadhar = () => {
       <h1 className='absolute h-[3px] w-[755px] bg-black -mt-[480px]'></h1>
       <h1 className='absolute h-[100px] w-[120px] bg-white -mt-[375px] ml-[620px]'></h1>
       
-    </div>
+    </div>    
   )
 }
 
