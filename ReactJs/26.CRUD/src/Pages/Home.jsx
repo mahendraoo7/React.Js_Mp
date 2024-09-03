@@ -1,26 +1,9 @@
-import React from 'react'
+import React ,{useEffect, useState} from 'react';
+import axios from 'axios';
+import {student} from '../../Student.json' 
 
-const people = [
+const Home = () => {
 
-  {
-    name: 'Raghav',
-    email: 'raghav@gmail.com',
-    phoneNo : 9988776655,
-    age:24,
-    image:
-      'https://media.istockphoto.com/id/1316420668/vector/user-icon-human-person-symbol-social-profile-icon-avatar-login-sign-web-user-symbol.jpg?s=1024x1024&w=is&k=20&c=O0VqqcmNvml8qJuK1YzCCE4U-xdZdtaQD8d1hAeEoCA=',
-  },
-  {
-    name: 'Ramesh',
-    email: 'ramesh@gmail.com',
-    phoneNo : 9988776655,
-    age : 53,
-    image:
-      'https://media.istockphoto.com/id/1316420668/vector/user-icon-human-person-symbol-social-profile-icon-avatar-login-sign-web-user-symbol.jpg?s=1024x1024&w=is&k=20&c=O0VqqcmNvml8qJuK1YzCCE4U-xdZdtaQD8d1hAeEoCA=',
-  },
-]
-
-const Home = () =>  {
   return (
     <>
       <section className="mx-auto w-full max-w-7xl px-4 py-4">
@@ -84,29 +67,33 @@ const Home = () =>  {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200 bg-white">
-                    {people.map((person) => (
-                      <tr key={person.name}>
+              
+                    {
+                      student && student.map( students => {
+                         return (
+                        
+                        <tr key={student.id } >
                         <td className="whitespace-nowrap px-4 py-4">
                           <div className="flex items-center">
                             <div className="h-10 w-10 flex-shrink-0">
                               <img
                                 className="h-10 w-10 rounded-full object-cover"
-                                src={person.image}
+                                src={students.Image}
                                 alt=""
                               />
                             </div>
                             <div className="ml-4">
-                              <div className="text-sm font-medium text-gray-900">{person.name}</div>
-                              <div className="text-sm text-gray-700">{person.email}</div>
+                              <div className="text-sm font-medium text-gray-900">{students.fullName}</div>
+                              <div className="text-sm text-gray-700">{students.email}</div>
                             </div>
                           </div>
                         </td>
                         <td className="whitespace-nowrap text-center">
-                          <div className="text-sm text-gray-900 ">{person.phoneNo}</div>
+                          <div className="text-sm text-gray-900 ">{students.phoneNo}</div>
                         </td>
                          <td className='text-center'>
 
-                          <div className="text-sm text-gray-700">{person.age}</div>
+                          <div className="text-sm text-gray-700">{students.age}</div>
                         </td>
                         
                         <td className="whitespace-nowrap px-4 py-4 text-sm font-medium text-center">
@@ -120,7 +107,8 @@ const Home = () =>  {
                           </a>
                         </td>
                       </tr>
-                    ))}
+                         )
+                    })}
                   </tbody>
                 </table>
               </div>
@@ -159,9 +147,11 @@ const Home = () =>  {
           <a href="#" className="mx-2 text-sm font-semibold text-gray-900">
             <span className="hidden lg:block">Next &rarr;</span>
             <span className="block lg:hidden">&rarr;</span>
+            
           </a>
         </div>
       </section>
+
     </>
   )
 }

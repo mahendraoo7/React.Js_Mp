@@ -10,7 +10,7 @@ const Add = () => {
 
    const navigate = useNavigate()
 
-   const [student ,setStudent] = useState({
+   const [Student ,setStudent] = useState({
  
        fullName : '',
        email : '',
@@ -26,7 +26,7 @@ const Add = () => {
     if(file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setStudents({...student , image:reader.result})
+        setStudent({...Student , Image:reader.result})
       }
       reader.readAsDataURL(file)
     }
@@ -35,7 +35,7 @@ const Add = () => {
 
    const onSubmitStudent = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3000/student",student)
+    axios.post("http://localhost:3000/student",Student)
     .then(() => {
       navigate("/");
     })
@@ -67,7 +67,7 @@ const Add = () => {
                     placeholder="Enter Your Name"
                     id="fullName"
                     name="fullName"
-                    onChange={(e) => setStudent({...student, fullName:e.target.value})}
+                    onChange={(e) => setStudent({...Student, fullName:e.target.value})}
                   ></input>
                 </div>
               </div>
@@ -87,10 +87,10 @@ const Add = () => {
                     placeholder="Enter Your Email"
                     id="email"
                     name="email"
-                    onChange={(e) => setStudent({...student, email:e.target.value})}
+                    onChange={(e) => setStudent({...Student, email:e.target.value})}
                   ></input>
                 </div>
-              </div>
+              </div> 
               <div>
                 <label
                   htmlFor=""
@@ -106,7 +106,7 @@ const Add = () => {
                     type="number"
                     placeholder="Enter Your Number"
                     name="phoneNO"
-                    onChange={(e) => setStudent({...student, phoneNo:e.target.value})}
+                    onChange={(e) => setStudent({...Student, phoneNo:e.target.value})}
                   ></input>
                 </div>
               </div>
@@ -125,7 +125,7 @@ const Add = () => {
                     type="number"
                     placeholder="Enter Your age"
                     name="age"
-                    onChange={(e) => setStudent({...student, age:e.target.value})}
+                    onChange={(e) => setStudent({...Student, age:e.target.value})}
                   ></input>
                 </div>
               </div>
