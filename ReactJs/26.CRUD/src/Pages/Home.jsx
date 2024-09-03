@@ -1,9 +1,9 @@
 import React from 'react'
 
 const people = [
+
   {
     name: 'Raghav',
-    title: 'Front-end Developer',
     email: 'raghav@gmail.com',
     phoneNo : 9988776655,
     age:24,
@@ -12,7 +12,6 @@ const people = [
   },
   {
     name: 'Ramesh',
-    title: 'Back-end Developer',
     email: 'ramesh@gmail.com',
     phoneNo : 9988776655,
     age : 53,
@@ -56,7 +55,6 @@ const Home = () =>  {
                         <span>Students Name</span>
                       </th>
                      
-
                       <th
                         scope="col"
                         className="px-4 py-3.5 text-center text-sm font-normal text-gray-700"
@@ -70,12 +68,7 @@ const Home = () =>  {
                       >
                         Age
                       </th>
-                      <th
-                        scope="col"
-                        className="px-10 text-sm font-normal text-gray-700"
-                      >
-                        Title
-                      </th>
+                      
                       <th
                         scope="col"
                         className="px-4 py-3.5 text-center text-sm font-normal text-gray-700"
@@ -116,9 +109,6 @@ const Home = () =>  {
                           <div className="text-sm text-gray-700">{person.age}</div>
                         </td>
                         
-                        <td className="whitespace-nowrap text-sm text-gray-700 text-center">
-                          {person.title}
-                        </td>
                         <td className="whitespace-nowrap px-4 py-4 text-sm font-medium text-center">
                           <a href="#" className="text-gray-700">
                             Edit

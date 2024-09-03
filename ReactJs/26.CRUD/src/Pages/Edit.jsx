@@ -10,16 +10,7 @@ const Edit = () => {
           <h2 className="text-2xl font-bold leading-tight text-black">
             Edit Students
           </h2>
-          <p className="mt-2 text-base text-gray-600">
-            Already have an account?{' '}
-            <a
-              href="#"
-              title=""
-              className="font-medium text-black transition-all duration-200 hover:underline"
-            >
-              Login In
-            </a>
-          </p>
+          
           <form action="#" method="POST" className="mt-8">
             <div className="space-y-5">
               <div>

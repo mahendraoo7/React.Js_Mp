@@ -1,0 +1,60 @@
+{
+  "student": [
+    {
+      "name": "Raghav",
+      "email": "raghav@gmail.com",
+      "phoneNo": 9988776655,
+      "age": 24,
+      "image": "https://media.istockphoto.com/id/1316420668/vector/user-icon-human-person-symbol-social-profile-icon-avatar-login-sign-web-user-symbol.jpg?s=1024x1024&w=is&k=20&c=O0VqqcmNvml8qJuK1YzCCE4U-xdZdtaQD8d1hAeEoCA="
+    },
+    {
+      "name": "Ramesh",
+      "email": "ramesh@gmail.com",
+      "phoneNo": 9988776655,
+      "age": 53,
+      "image": "https://media.istockphoto.com/id/1316420668/vector/user-icon-human-person-symbol-social-profile-icon-avatar-login-sign-web-user-symbol.jpg?s=1024x1024&w=is&k=20&c=O0VqqcmNvml8qJuK1YzCCE4U-xdZdtaQD8d1hAeEoCA="
+    },
+    {
+      "id": "2504",
+      "fullName": "",
+      "email": "",
+      "phoneNo": "",
+      "age": "",
+      "image": ""
+    },
+    {
+      "id": "6910",
+      "fullName": "",
+      "email": "",
+      "phoneNo": "",
+      "age": "",
+      "image": ""
+    },
+    {
+      "id": "735a",
+      "fullName": "",
+      "email": "",
+      "phoneNo": "",
+      "age": "",
+      "image": ""
+    },
+    {
+      "id": "d815",
+      "fullName": "",
+      "email": "heello@gmail.com",
+      "phoneNo": "9898877665",
+      "age": "55",
+      "image": "",
+      "fullname": "heello"
+    },
+    {
+      "id": "16f0",
+      "fullName": "",
+      "email": "sdsd@gmail.com",
+      "phoneNo": "5654646",
+      "age": "40",
+      "image": "",
+      "fullname": "bd"
+    }
+  ]
+}
