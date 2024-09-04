@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const Add = () => {
    const navigate = useNavigate()
 
    const [Student ,setStudent] = useState({
- 
+       id : 1,
        fullName : '',
        email : '',
        phoneNo : '',
@@ -19,6 +19,16 @@ const Add = () => {
        Image : ''
 
    })
+    
+
+  useEffect(() => {
+    const lastId = localStorage.getItem('lastStudentId')
+    
+    if(lastId){
+      setStudent((prevState) => ({...prevState , id:parseInt(lastId) + 1 }))
+    }
+  } , [])
+
 
    const handleImageChange = (e) => {
     const file= e.target.files[0]
@@ -37,6 +47,7 @@ const Add = () => {
     e.preventDefault();
     axios.post("http://localhost:3000/student",Student)
     .then(() => {
+      localStorage.setItem('lastStudentId' , Student.id)
       navigate("/");
     })
   }
@@ -49,7 +60,7 @@ const Add = () => {
             ADD Student
           </h2>
           
-          <form action="#" method="POST" className="mt-8"  onSubmit={onSubmitStudent}>
+          <form action="#" method="POST" className="mt-8" onSubmit={onSubmitStudent}>
             <div className="space-y-5">
               <div>
                 <label
