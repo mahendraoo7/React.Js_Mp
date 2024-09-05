@@ -1,9 +1,12 @@
 import React ,{useEffect, useState} from 'react';
 import axios from 'axios';
 import {student} from '../../Student.json' 
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 
+    const [Studenet ,setStudent] = useState([])
+  
   return (
     <>
       <section className="mx-auto w-full max-w-7xl px-4 py-4">
@@ -16,12 +19,13 @@ const Home = () => {
             </p>
           </div>
           <div>
-            <button
+           <Link to="/add"> <button
               type="button"
               className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
             >
               Add new Students
             </button>
+            </Link>
           </div>
         </div>
         <div className="mt-6 flex flex-col">
@@ -97,14 +101,17 @@ const Home = () => {
                         </td>
                         
                         <td className="whitespace-nowrap px-4 py-4 text-sm font-medium text-center">
-                          <a href="#" className="text-gray-700">
+                         <Link to="/edit">  <button className="text-gray-700">
                             Edit
-                          </a>
+                          </button>
+                          </Link>
                         </td>
                         <td className="whitespace-nowrap px-4 py-4 text-sm text-gray-700">
-                        <a href="#" className="text-gray-700">
+                         
+                         <button className="font-bold text-red-400" >
                             Remove
-                          </a>
+                          </button>
+                      
                         </td>
                       </tr>
                          )
