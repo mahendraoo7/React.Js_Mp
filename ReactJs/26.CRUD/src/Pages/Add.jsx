@@ -8,26 +8,24 @@ import { useNavigate } from "react-router-dom";
 
 const Add = () => {
 
-   const navigate = useNavigate()
+  const navigate = useNavigate()
 
-   const [Student ,setStudent] = useState({
-       id : 1,
-       fullName : '',
-       email : '',
-       phoneNo : '',
-       age : '',
-       Image : ''
+const [student, setStudents] = useState({
+  id: '1',
+  fullname: '',
+  email: '',
+  phoneno: '',
+  age: '',
+  image: ''
+})
 
-   })
-    
-
-  useEffect(() => {
-    const lastId = localStorage.getItem('lastStudentId')
-    
-    if(lastId){
-      setStudent((prevState) => ({...prevState , id:parseInt(lastId) + 1 }))
-    }
-  } , [])
+useEffect(() => {
+  const lastId = localStorage.getItem('lastStudentId' , "")
+  if(lastId){
+    setStudents((prevState) => ({...prevState , id:`${parseInt(lastId) + 1}`}))
+    // console.log(setStudents , 'setStudent');
+  }
+} , [])
 
 
    const handleImageChange = (e) => {
@@ -45,9 +43,9 @@ const Add = () => {
 
    const onSubmitStudent = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3000/student",Student)
+    axios.post("http://localhost:3000/student",student)
     .then(() => {
-      localStorage.setItem('lastStudentId' , Student.id)
+      localStorage.setItem('lastStudentId' , student.id)
       navigate("/");
     })
   }
@@ -163,13 +161,13 @@ const Add = () => {
               <div className="flex gap-10">
                 <button
                   type="button"
-                  className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
+                  className="inline-flex w-full items-center justify-center rounded-md bg-black px-3 py-2 font-semibold leading-7 text-white hover:bg-black/80"
                 >
                   Back <ArrowLeft className="ml-2" size={16} />
                 </button>
                 <button
                   type="Submit"
-                  className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
+                  className="inline-flex w-full items-center justify-center rounded-md bg-black px-3 py-2 font-semibold leading-7 text-white hover:bg-black/80"
                 >
                   ADD Student 
                 </button>

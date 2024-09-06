@@ -1,20 +1,3 @@
 {
-  "student": [
-    {
-      "id": 1,
-      "fullName": "Mahendra Purohit",
-      "email": "kakakadixit@gmail.com",
-      "phoneNo": "09327036548",
-      "age": "23",
-      "Image": ""
-    },
-    {
-      "id": 2,
-      "fullName": "Mahendra Purohit",
-      "email": "mahendrapurohitmewada@gmail.com",
-      "phoneNo": "09327036548",
-      "age": "20",
-      "Image": ""
-    }
-  ]
+  "student": []
 }

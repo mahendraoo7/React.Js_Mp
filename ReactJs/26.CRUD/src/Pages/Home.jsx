@@ -1,15 +1,42 @@
 import React ,{useEffect, useState} from 'react';
 import axios from 'axios';
-import {student} from '../../Student.json' 
+import {student} from '../../Student.json'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
 
-    const [Studenet ,setStudent] = useState([])
+
+    const [Student ,setStudent] = useState([])
+
+    const loadStudent = async () => {
+      const res = await axios.get('http://localhost:3000/student')
+      setStudent(res.Student);
+
+       if (res.Student.length === 0) {
+            localStorage.clear()
+            console.log('call localStorage');
+          }
+    }
   
+    useEffect(() => {
+      loadStudent()
+    }, [])
+  
+    const DeleteStudent = (id) => {
+      axios.delete(`http://localhost:3000/student/${id}`)
+        .then((res) => {
+          loadStudent()
+         
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
+  
+
   return (
     <>
-      <section className="mx-auto w-full max-w-7xl px-4 py-4">
+      <section className="w-full max-w-7xl py-4 " >
         <div className="flex flex-col space-y-4  md:flex-row md:items-center md:justify-between md:space-y-0">
           <div>
             <h2 className="text-lg font-semibold">Students</h2>
@@ -28,10 +55,10 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="mt-6 flex flex-col">
-          <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-              <div className="overflow-hidden border border-gray-200 md:rounded-lg">
+        <div className="mt-6  flex flex-col">
+          <div className=" overflow-x-auto">
+            <div className="inline-block min-w-full py-2 align-middle ">
+              <div className="w-screen border border-gray-200 md:rounded-lg ">
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50">
                     <tr>
@@ -39,7 +66,7 @@ const Home = () => {
                         scope="col"
                         className="px-4 py-3.5 text-left text-sm font-normal text-gray-700"
                       >
-                        <span>Students Name</span>
+                        <span> Students Name</span>
                       </th>
                      
                       <th
@@ -70,10 +97,10 @@ const Home = () => {
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-200 bg-white">
+                  <tbody className=" divide-gray-200 bg-white">
               
                     {
-                      student && student.map( students => {
+                      student.map(students => {
                          return (
                         
                         <tr key={student.id } >
@@ -108,7 +135,7 @@ const Home = () => {
                         </td>
                         <td className="whitespace-nowrap px-4 py-4 text-sm text-gray-700">
                          
-                         <button className="font-bold text-red-400" >
+                         <button className="font-bold text-red-400" onClick={() => DeleteStudent(students.id)}>
                             Remove
                           </button>
                       

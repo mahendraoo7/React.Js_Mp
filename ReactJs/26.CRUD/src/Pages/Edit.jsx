@@ -87,13 +87,13 @@ const Edit = () => {
               <div className='flex space-x-12'>
                 <button
                   type="button"
-                  className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
+                  className="inline-flex w-full items-center justify-center rounded-md bg-black px-1 py-2 font-semibold leading-7 text-white hover:bg-black/80"
                 >
                   Go Back <ArrowLeft className="ml-2" size={16} />
                 </button>
                 <button
                   type="button"
-                  className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
+                  className=" w-full items-center justify-center rounded-md bg-black px-3 py-2  font-semibold leading-7 text-white hover:bg-black/80 inline-block"
                 >
                   Edit Students
                 </button>
