@@ -15,9 +15,9 @@ const Layout = () => {
           <Navbar/>
           <Routes>
             <Route path="/" element={<Home/>} ></Route>
-            <Route path="/edit" element={<Edit/>} ></Route>
+            <Route path='/edit/:id' element={<Edit/>} ></Route>
             <Route path="/add" element={<Add/>} ></Route>
-            <Route path="/signup" element={<SignUp/>} ></Route>
+            <Route path="/signup" element={< SignUp/>} ></Route>
             <Route path="/signin" element={<SignIn/>} ></Route>
             <Route path="/profile" element={<Profile/>} ></Route>
             <Route path="*" element={<Page404/>} ></Route>

@@ -4,33 +4,24 @@ import { Link } from "react-router-dom";
 import { useState , useEffect } from "react";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+import { WiDaySleetStorm } from "react-icons/wi";
 
 
 const Add = () => {
 
-  const navigate = useNavigate()
-
-const [student, setStudents] = useState({
-  id: '1',
-  fullname: '',
+const navigate = useNavigate()
+const [Student, setStudent] = useState({
+  
+  fullName: '',
   email: '',
-  phoneno: '',
+  phoneNo: '',
   age: '',
-  image: ''
+  Image: ''
+
 })
-
-useEffect(() => {
-  const lastId = localStorage.getItem('lastStudentId' , "")
-  if(lastId){
-    setStudents((prevState) => ({...prevState , id:`${parseInt(lastId) + 1}`}))
-    // console.log(setStudents , 'setStudent');
-  }
-} , [])
-
 
    const handleImageChange = (e) => {
     const file= e.target.files[0]
-
     if(file) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -43,12 +34,15 @@ useEffect(() => {
 
    const onSubmitStudent = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3000/student",student)
-    .then(() => {
-      localStorage.setItem('lastStudentId' , student.id)
-      navigate("/");
+    axios.post("http://localhost:3000/student",Student)
+    .then(res => {
+      console.log(res);
+      navigate('/')
     })
   }
+
+
+
   return (
     <section className="rounded-md ">
       <div className="flex items-center justify-center bg-white px-4 py-10 sm:px-6 sm:py-16 lg:px-8 ">
@@ -76,7 +70,7 @@ useEffect(() => {
                     placeholder="Enter Your Name"
                     id="fullName"
                     name="fullName"
-                    onChange={(e) => setStudent({...Student, fullName:e.target.value})}
+                    onChange={e => setStudent({...Student, fullName: e.target.value})}
                   ></input>
                 </div>
               </div>
@@ -96,7 +90,7 @@ useEffect(() => {
                     placeholder="Enter Your Email"
                     id="email"
                     name="email"
-                    onChange={(e) => setStudent({...Student, email:e.target.value})}
+                    onChange={e => setStudent({...Student, email: e.target.value})}
                   ></input>
                 </div>
               </div> 
@@ -115,7 +109,7 @@ useEffect(() => {
                     type="number"
                     placeholder="Enter Your Number"
                     name="phoneNO"
-                    onChange={(e) => setStudent({...Student, phoneNo:e.target.value})}
+                    onChange={e => setStudent({...Student, phoneNo:e.target.value})}
                   ></input>
                 </div>
               </div>
@@ -134,7 +128,7 @@ useEffect(() => {
                     type="number"
                     placeholder="Enter Your age"
                     name="age"
-                    onChange={(e) => setStudent({...Student, age:e.target.value})}
+                    onChange={e => setStudent({...Student, age:e.target.value})}
                   ></input>
                 </div>
               </div>

@@ -1,3 +1,28 @@
 {
-  "student": []
+  "student": [
+    {
+      "id": "0d20",
+      "fullName": "Mahendra Purohit",
+      "email": "mahendrapurohit9889@gmail.com",
+      "phoneNo": "09327036548",
+      "age": "18",
+      "Image": ""
+    },
+    {
+      "id": "d75d",
+      "fullName": "vinod",
+      "email": "vince1818@gmail.com",
+      "phoneNo": "9313961659",
+      "age": "16",
+      "Image": ""
+    },
+    {
+      "id": "a306",
+      "fullName": "Kiran",
+      "email": "Kiran@gmail.com",
+      "phoneNo": "98768656",
+      "age": "15",
+      "Image": ""
+    }
+  ]
 }

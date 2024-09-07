@@ -1,39 +1,30 @@
 import React ,{useEffect, useState} from 'react';
 import axios from 'axios';
-import {student} from '../../Student.json'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate } from 'react-router-dom'
 
 const Home = () => {
 
+  const [student ,setstudent] = useState([])
 
-    const [Student ,setStudent] = useState([])
+  const navigate = useNavigate();
 
-    const loadStudent = async () => {
-      const res = await axios.get('http://localhost:3000/student')
-      setStudent(res.Student);
-
-       if (res.Student.length === 0) {
-            localStorage.clear()
-            console.log('call localStorage');
-          }
-    }
-  
-    useEffect(() => {
-      loadStudent()
-    }, [])
-  
-    const DeleteStudent = (id) => {
-      axios.delete(`http://localhost:3000/student/${id}`)
-        .then((res) => {
-          loadStudent()
-         
+  useEffect(() => {
+     axios.get('http://localhost:3000/student')
+     .then(res => setstudent(res.data))
+     .catch(err => console.log(err))
+  }, [])
+   
+   const handleDelete = (id) => {
+      const confirm = window.confirm("Really want to delete");
+      if(confirm) {
+        axios.delete('http://localhost:3000/student/' + id)
+        .then(res => {
+             location.reload();
         })
-        .catch((error) => {
-          console.log(error)
-        })
-    }
+        .catch(err => console.log(err))
+      } 
+   }
   
-
   return (
     <>
       <section className="w-full max-w-7xl py-4 " >
@@ -100,44 +91,45 @@ const Home = () => {
                   <tbody className=" divide-gray-200 bg-white">
               
                     {
-                      student.map(students => {
+                     student.map(( S , V) => {
                          return (
-                        
-                        <tr key={student.id } >
+                         
+                        <tr key={V} >
                         <td className="whitespace-nowrap px-4 py-4">
                           <div className="flex items-center">
                             <div className="h-10 w-10 flex-shrink-0">
                               <img
                                 className="h-10 w-10 rounded-full object-cover"
-                                src={students.Image}
+                                src={S.Image}
                                 alt=""
                               />
                             </div>
                             <div className="ml-4">
-                              <div className="text-sm font-medium text-gray-900">{students.fullName}</div>
-                              <div className="text-sm text-gray-700">{students.email}</div>
+                              <div className="text-sm font-medium text-gray-900">{S.fullName}</div>
+                              <div className="text-sm text-gray-700">{S.email}</div>
                             </div>
                           </div>
                         </td>
                         <td className="whitespace-nowrap text-center">
-                          <div className="text-sm text-gray-900 ">{students.phoneNo}</div>
+                          <div className="text-sm text-gray-900 ">{S.phoneNo}</div>
                         </td>
                          <td className='text-center'>
 
-                          <div className="text-sm text-gray-700">{students.age}</div>
+                          <div className="text-sm text-gray-700">{S.age}</div>
                         </td>
                         
                         <td className="whitespace-nowrap px-4 py-4 text-sm font-medium text-center">
-                         <Link to="/edit">  <button className="text-gray-700">
+                         <Link to={`/edit/${S.id}`}>  <button className="text-gray-700">
                             Edit
                           </button>
                           </Link>
                         </td>
                         <td className="whitespace-nowrap px-4 py-4 text-sm text-gray-700">
-                         
-                         <button className="font-bold text-red-400" onClick={() => DeleteStudent(students.id)}>
+                         <Link>
+                         <button className="font-bold text-red-400" onClick={e => handleDelete(S.id)}>
                             Remove
                           </button>
+                         </Link>
                       
                         </td>
                       </tr>
