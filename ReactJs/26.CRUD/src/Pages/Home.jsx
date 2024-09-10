@@ -49,8 +49,8 @@ const Home = () => {
         <div className="mt-6  flex flex-col">
           <div className=" overflow-x-auto">
             <div className="inline-block min-w-full py-2 align-middle ">
-              <div className="w-screen border border-gray-200 md:rounded-lg ">
-                <table className="min-w-full divide-y divide-gray-200">
+              <div className="w-screen border border-gray-400 md:rounded-lg ">
+                <table className="min-w-full divide-y divide-gray-400">
                   <thead className="bg-gray-50">
                     <tr>
                       <th
@@ -94,7 +94,7 @@ const Home = () => {
                      student.map(( S , V) => {
                          return (
                          
-                        <tr key={V} >
+                        <tr key={V}  className=''>
                         <td className="whitespace-nowrap px-4 py-4">
                           <div className="flex items-center">
                             <div className="h-10 w-10 flex-shrink-0">
@@ -104,7 +104,7 @@ const Home = () => {
                                 alt=""
                               />
                             </div>
-                            <div className="ml-4">
+                            <div className="ml-4 ">
                               <div className="text-sm font-medium text-gray-900">{S.fullName}</div>
                               <div className="text-sm text-gray-700">{S.email}</div>
                             </div>

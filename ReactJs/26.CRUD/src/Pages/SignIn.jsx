@@ -16,7 +16,7 @@ const SignIn = () => {
             <Link to='/signup'>
           <button
             type="button"
-            className="rounded-md  px-3 py-2 text-[18px] font-bold text-black "
+            className="rounded-md  px-3 py-2 text-[15px] font-bold text-black hover:underline "
           >
             Sign Up
           </button>

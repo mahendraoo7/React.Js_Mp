@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { useState , useEffect } from "react";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
-import { WiDaySleetStorm } from "react-icons/wi";
 
 
 const Add = () => {
 
 const navigate = useNavigate()
+
 const [Student, setStudent] = useState({
   
   fullName: '',
@@ -34,6 +34,9 @@ const [Student, setStudent] = useState({
 
    const onSubmitStudent = (e) => {
     e.preventDefault();
+    const maxId = Math.max(...Student.map(item => item.id), 0);
+      const newItemWithId = { ...newItem, id: maxId + 1 };
+      setStudent([...Student, newItemWithId]);
     axios.post("http://localhost:3000/student",Student)
     .then(res => {
       console.log(res);
@@ -41,8 +44,17 @@ const [Student, setStudent] = useState({
     })
   }
 
+  // const addNewItem = (newItem) => {
 
+  //   const maxId = Math.max(...Student.map(item => item.id), 0);
 
+  //   // Create new item with new ID
+  //   const newItemWithId = { ...newItem, id: maxId + 1 };
+
+  //   // Add new item to existing data
+  //   setStudent([...Student, newItemWithId]);
+  // };
+   
   return (
     <section className="rounded-md ">
       <div className="flex items-center justify-center bg-white px-4 py-10 sm:px-6 sm:py-16 lg:px-8 ">
@@ -52,7 +64,7 @@ const [Student, setStudent] = useState({
             ADD Student
           </h2>
           
-          <form action="#" method="POST" className="mt-8" onSubmit={onSubmitStudent}>
+          <form action="#" method="POST" className="mt-8" onSubmit={onSubmitStudent} key={Student.id}  onClick={() => addNewItem({ name: 'New Item' })}>
             <div className="space-y-5">
               <div>
                 <label
@@ -73,6 +85,7 @@ const [Student, setStudent] = useState({
                     onChange={e => setStudent({...Student, fullName: e.target.value})}
                   ></input>
                 </div>
+                
               </div>
               <div>
                 <label
@@ -150,15 +163,19 @@ const [Student, setStudent] = useState({
                     onChange={handleImageChange}
                   ></input>
                 </div>
+                
               </div>
               
+              
               <div className="flex gap-10">
+              <Link to="/">
                 <button
                   type="button"
                   className="inline-flex w-full items-center justify-center rounded-md bg-black px-3 py-2 font-semibold leading-7 text-white hover:bg-black/80"
                 >
                   Back <ArrowLeft className="ml-2" size={16} />
                 </button>
+              </Link>
                 <button
                   type="Submit"
                   className="inline-flex w-full items-center justify-center rounded-md bg-black px-3 py-2 font-semibold leading-7 text-white hover:bg-black/80"

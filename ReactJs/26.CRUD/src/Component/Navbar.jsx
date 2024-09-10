@@ -12,10 +12,7 @@ const menuItems = [
     name: 'ADD',
     href: '/add',
   },
-  {
-    name: 'EDIT',
-    href: '/edit',
-  },
+  
   
   
 ]
@@ -31,8 +28,9 @@ export function Navbar() {
     <div className="relative w-full bg-slate-700 text-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2 ">
-          
-          <span className="font-bold">StudentData</span>
+          <Link to="/">
+             <a className="font-bold">StudentData</a>
+          </Link>
         </div>
         <div className="hidden grow items-start lg:flex justify-center">
           <ul className="ml-12 inline-flex space-x-8 text-white">
