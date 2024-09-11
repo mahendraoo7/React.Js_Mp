@@ -9,18 +9,15 @@ const CartReducer = (state = [], action) => {
             return state.filter(item => item.id !== action.data);
 
         case EMPTY_CART:
-            return [];
+            return localStorage.clear();
 
         case CART_TO_WISHLIST:
-            // Handle CART_TO_WISHLIST case
             return state;
 
         case INCREMENT:
-            // Handle INCREMENT case
             return state;
 
         case DECREMENT:
-            // Handle DECREMENT case
             return state;
 
         default:

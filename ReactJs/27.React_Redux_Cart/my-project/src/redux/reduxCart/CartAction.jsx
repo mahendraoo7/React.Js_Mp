@@ -1,6 +1,5 @@
 import { ADD_TO_CART  ,  REMOVE_TO_CART , EMPTY_CART , CART_TO_WISHLIST , INCREMENT , DECREMENT } from "../Constant";
 
-
 export function add_cart(data){
     return{
         type:ADD_TO_CART,

@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { add_cart, remove_cart, empty_cart } from '../redux/reduxCart/CartAction'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { add_wishlist  } from '../redux/reduxWishlist/WishlistAction'
+import { FaHeart } from 'react-icons/fa'
 
 const Home = () => {
 
@@ -31,24 +33,32 @@ const Home = () => {
           product.map((item) => {
             return (
               <div>
-                <div className="w-[300px] rounded-md border">
+                <div className="w-[300px] rounded-md border my-2">
                   <img
                     src={item.image}
                     alt="Laptop"
                     className="h-[200px] w-full rounded-md object-cover"
                   />
-                  <div className="p-4">
+                  <div className=" ">
                     <h1 className="text-lg font-semibold line-clamp-1">{item.title}</h1>
                     <p className="mt-3 text-sm text-gray-600 line-clamp-2">
                       {item.description}
                     </p>
+                    <div className='w-full flex '>
                     <button
                       onClick={() => dispatch(add_cart(item))}
                       type="button"
-                      className="mt-4 rounded-sm bg-black px-2.5 py-1 text-[10px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                      className="w-1/2 rounded-sm bg-black px-3 py-2 text-[10px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                     >
                       Add To Cart
                     </button>
+                    <button
+                      onClick={() => dispatch(add_wishlist(item))}
+                      type="button"
+                      className="w-1/2 ml-3 flex justify-center items-center bg-blue-500 "
+                    > <FaHeart className='size-7'></FaHeart>
+                    </button> 
+                    </div>
                   </div>
                 </div>
               </div>
