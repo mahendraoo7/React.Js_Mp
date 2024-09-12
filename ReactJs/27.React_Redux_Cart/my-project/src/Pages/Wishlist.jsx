@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { remove_wishlist } from '../redux/reduxWishlist/WishlistAction'; // Ensure path is correct
+import { empty_wishlist, remove_wishlist } from '../redux/reduxWishlist/WishlistAction'; 
 
 const Wishlist = () => {
-    const data = useSelector(state => state.wishdata); // Ensure state structure matches
+    const data = useSelector(state => state.wishdata);
     const dispatch = useDispatch();
 
     console.log("wishdata", data);
@@ -11,16 +11,20 @@ const Wishlist = () => {
     return (
         <div>
             <h1 className='heading'>Wishlist</h1>
+            
+            <button onClick={() => dispatch(empty_wishlist())} className='py-2 px-3 bg-red-600 border-2 border-black font-bold'>Empty WishList</button>
             <div className='flex justify-center items-center text-center'>
                 <table className='table-fixed w-[800px]'>
                     <thead>
                         <tr>
                             <th className='text-left'>Image</th>
                             <th>Title</th>
-                            <th>Remove</th> {/* Updated text */}
+                            <th>Remove</th>
                         </tr>
                     </thead>
                     <tbody>
+                     
+
                         {data.map((item) => (
                             <tr key={item.id} className='border'>
                                 <td>

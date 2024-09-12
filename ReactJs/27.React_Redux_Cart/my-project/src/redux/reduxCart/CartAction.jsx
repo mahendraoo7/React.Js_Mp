@@ -14,11 +14,10 @@ export function remove_cart(id) {
     }
 }
 
-export function empty_cart(data){
-    return{
-        type:EMPTY_CART,
-        data
-    }
+export function empty_cart() {
+    return {
+        type: EMPTY_CART
+    };  
 }
 
 export function cart_to_wishlist(data){

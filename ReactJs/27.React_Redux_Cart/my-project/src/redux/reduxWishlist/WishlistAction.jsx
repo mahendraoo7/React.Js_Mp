@@ -9,11 +9,10 @@ export function add_wishlist(wishdata) {
 
 export function remove_wishlist(id) {
     return {
-        type: REMOVE_FROM_WISHLIST, // Updated to match reducer case
-        id // Updated to be consistent with reducer
+        type: REMOVE_FROM_WISHLIST, 
+        id 
     };
 }
-
 export function empty_wishlist() {
     return {
         type: EMPTY_WISHLIST

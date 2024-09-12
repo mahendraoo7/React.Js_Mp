@@ -6,16 +6,16 @@ const WishlistReducer = (state = [], action) => {
             return [action.wishdata, ...state];
         
             case REMOVE_FROM_WISHLIST:
-                return state.filter(item => item.id !== action.id); // Ensure action.id is correct
-                
-             // Updated to match action payload
+                return state.filter(item => item.id !== action.id);
         
         case EMPTY_WISHLIST:
-            return []; // Clears the wishlist
+            console.log('emptywhislist' , action);
+                 data = []
+                return [...data] 
         
         case WISHLIST_TO_CART:
-            // This needs logic based on what you want to achieve
-            return state; // Placeholder
+
+            return state; 
         
         default:
             return state;

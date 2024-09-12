@@ -1,16 +1,19 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { remove_cart } from '../redux/reduxCart/CartAction';
+import { remove_cart ,empty_cart } from '../redux/reduxCart/CartAction';
 
 const Cart = () => {
     const data1 = useSelector(state => state.cart);
+    
     const dispatch = useDispatch();
 
     return (
         <div>
             <h1 className='heading'>This is Cart Page 1</h1>
+            <button onClick={() => dispatch(empty_cart())} className='py-2 px-3 bg-red-600 border-2 border-black font-bold'>Empty Cart</button>
             <div className='flex justify-center items-center text-center'>
                 <table className='table-fixed w-[800px]'>
+                
                     <thead>
                         <tr>
                             <th>Image</th>
