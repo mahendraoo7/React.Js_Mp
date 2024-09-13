@@ -10,8 +10,8 @@ const WishlistReducer = (state = [], action) => {
         
         case EMPTY_WISHLIST:
             console.log('emptywhislist' , action);
-                 data = []
-                return [...data] 
+                 state = []
+                return [...state] 
         
         case WISHLIST_TO_CART:
 

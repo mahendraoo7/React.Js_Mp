@@ -6,7 +6,7 @@ const Wishlist = () => {
     const data = useSelector(state => state.wishdata);
     const dispatch = useDispatch();
 
-    console.log("wishdata", data);
+    // console.log("wishdata", data);
 
     return (
         <div>
