@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.2.4",
     "axios": "^1.7.7",
     "combine-reducers": "^1.0.0",
     "font-awesome": "^4.7.0",
