@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@auth0/auth0-react": "^2.2.4",
     "@react-google-maps/api": "^2.19.3",
     "bootstrap": "5.3.3",
     "install": "^0.13.0",
