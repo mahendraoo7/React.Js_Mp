@@ -7,6 +7,10 @@ import Status from './Task/SwitchCase/Status';
 // import Garage from './Task/Logical/Garage';
 import ParentComponent from './Task/NestedCom.jsx/Parentcom';
 import Form from './Task/Form/form';
+import FruitList from './Task/ListRendering/List';
+import UserForm from './Task/Multiple/StateMultiple';
+
+
 
 function App() {
 
@@ -57,9 +61,22 @@ function App() {
   // )                            
                                         //  Handaling Form  //
 
-    return (
-      <Form/>
-    )
+    // return (
+    //   <Form/>
+    // )
+
+
+                                        //  List rendaring //
+
+      // return (
+      //   <FruitList/>
+      // )
+
+                                       //   Multiple State Variables
+
+      return (
+        <UserForm/>
+      )
 
 }
 export default App
