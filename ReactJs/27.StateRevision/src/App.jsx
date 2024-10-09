@@ -6,6 +6,7 @@ import Status from './Task/SwitchCase/Status';
 // import CemeraOn from './Task/Ternary/CemeraOn';
 // import Garage from './Task/Logical/Garage';
 import ParentComponent from './Task/NestedCom.jsx/Parentcom';
+import Form from './Task/Form/form';
 
 function App() {
 
@@ -51,11 +52,14 @@ function App() {
 
                                             //    Nested Component   //
 
-          return(
+  // return(
+  //    <ParentComponent/>
+  // )                            
+                                        //  Handaling Form  //
 
-             <ParentComponent/>
-
-          )                            
+    return (
+      <Form/>
+    )
 
 }
 export default App
