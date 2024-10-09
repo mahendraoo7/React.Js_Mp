@@ -7,5 +7,4 @@ const Missed = () => {
         </div>
     )
 }
-
 export default Missed
