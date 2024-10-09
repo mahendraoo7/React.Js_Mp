@@ -1,11 +1,15 @@
 import React from 'react';
+import Status from './Task/SwitchCase/Status';
 // import Goal from './Task/IfElse/Goal';
 // import Missed from './Task/IfElse/Missed' 
 // import CemeraOff from './Task/Ternary/CemeraOff';
 // import CemeraOn from './Task/Ternary/CemeraOn';
-import Garage from './Task/Logical/Garage';
+// import Garage from './Task/Logical/Garage';
+import ParentComponent from './Task/NestedCom.jsx/Parentcom';
 
-function App(props) {
+function App() {
+
+                                       //  IfElse  //
 
   // const goal = props.goal;
   
@@ -16,6 +20,8 @@ function App(props) {
   //   <Missed/>
   // 
 
+                                         // Ternary  //
+
 // const camera = props.camera;
 
 //    return (
@@ -24,13 +30,32 @@ function App(props) {
 //      </>
 //    )
  
-    //  logical Operator
+                                      //  logical Operator //
 
-    const cars = ['Ford','BMW','Audi'];
+    // const cars = ['Ford','BMW','Audi'];
 
-    return(
-      <Garage cars ={cars}/>
-    )
+    // return(
+    //   <Garage cars ={cars}/>
+    // )
+        
+                                          //  Switch Case //
+
+  //   const currentStatus = 'success'; 
+
+  //   return (
+  //   <div>
+  //     <h1>Status:</h1>
+  //     <Status status={currentStatus} />
+  //   </div>
+  // );
+
+                                            //    Nested Component   //
+
+          return(
+
+             <ParentComponent/>
+
+          )                            
+
 }
-
 export default App
