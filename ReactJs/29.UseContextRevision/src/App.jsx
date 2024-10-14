@@ -1,13 +1,18 @@
 import React from 'react'
 import './App.css'
-import ComA from './Component/ComA'
+import Theme from './Task/Theme/Theme'
+import{ ThemeProvider} from './Task/Theme/ThemeContext'
 
 function App() {
 
   return (
-    <>
-      <ComA/>
-    </>
+    <div>
+      <ThemeProvider>
+       <Theme/>
+      </ThemeProvider>  
+
+    </div>
+  
   )
 }
 
