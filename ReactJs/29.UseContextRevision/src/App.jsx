@@ -4,6 +4,7 @@ import Theme from './Task/Theme/Theme'
 import{ ThemeProvider} from './Task/Theme/ThemeContext'
 import { CounterProvider } from './Task/NestedCom/CounterProvider'
 import { NestedLevel1 } from './Task/NestedCom/NestedWrap'
+import MainContext from './Task/Multiple/MainContext'
 
 function App() {
 
@@ -13,10 +14,11 @@ function App() {
        <Theme/>
       </ThemeProvider>   */}
 
-      <CounterProvider>
+      {/* <CounterProvider>
          <NestedLevel1/>
-      </CounterProvider>
+      </CounterProvider> */}
 
+      <MainContext/>
     </div>
   
   )
