@@ -6,7 +6,7 @@ import CemeraOff from './Task/Ternary/CemeraOff';
 import CemeraOn from './Task/Ternary/CemeraOn';
 import Garage from './Task/Logical/Garage';
 import ParentComponent from './Task/NestedCom.jsx/Parentcom';
-import Form from './Task/Form/form';
+// import Form from './Task/Form/form';
 import FruitList from './Task/ListRendering/List';
 import UserForm from './Task/Multiple/StateMultiple';
 import ToggleButton from './Task/ToogleState/Button';
