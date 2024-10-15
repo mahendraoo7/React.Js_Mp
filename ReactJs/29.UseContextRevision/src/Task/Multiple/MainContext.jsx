@@ -4,8 +4,9 @@ import { ThemeContext , UserContext } from './Context';
 import Context from './ContextCus';
 
 const MainContext = () => {
+
   const theme = { background: 'lightblue', color: 'darkblue' };
-  const user = { name: 'Mahendra Purohit', age: 30 };
+  const user = { name: 'Mahendra Purohit', age: 18 };
 
   return (
     <ThemeContext.Provider value={theme}>
