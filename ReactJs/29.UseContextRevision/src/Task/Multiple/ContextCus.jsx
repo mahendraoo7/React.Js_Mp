@@ -7,10 +7,10 @@ const Context = () => {
   const theme = useContext(ThemeContext);
   const user = useContext(UserContext);
 
-  const HandleChange = (e) => {
-      
-    
-  } 
+  const handleChange = (e) => {
+    theme.color(e.target.value);
+  };
+
 
   return (
     <div style={{ background: theme.background, color: theme.color, padding: '20px', height : '100lvh'  }}>
@@ -19,7 +19,7 @@ const Context = () => {
       <p>Age: {user.age}</p>
       <h2>Theme</h2>
       <p>Background Color: {theme.background}</p>
-      <p>Text Color: <input type="text" value={theme.color} /> </p>
+      <p>Text Color: <input type="text" value={theme.color} onClick={handleChange} /> </p>
 
     </div>
   );
