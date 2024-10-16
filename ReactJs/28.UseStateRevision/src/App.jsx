@@ -12,7 +12,7 @@ import UserForm from './Task/Multiple/StateMultiple';
 import ToggleButton from './Task/ToogleState/Button';
 import Counter from './Task/ObjectState/Counter';
 import ItemList from './Task/StateArray/array';
-
+import Counter2 from './Task/Counter/count';
 
 function App(props) {
 
@@ -33,7 +33,7 @@ function App(props) {
     return (
 
             <>
-            <div>
+            {/* <div>
             {camera ?<CemeraOn/> : <CemeraOff/>} 
             <Garage cars ={cars}/>
 
@@ -46,7 +46,8 @@ function App(props) {
             <UserForm/>
             <Counter/>
             <ToggleButton/>
-            <ItemList/>
+            <ItemList/> */}
+            <Counter2/>
 
             </>
           )
