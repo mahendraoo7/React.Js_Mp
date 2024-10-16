@@ -1,39 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { Provider, useSelector, useDispatch } from 'react-redux';
 
-// Action Types
-const INCREMENT = 'INCREMENT';
-const DECREMENT = 'DECREMENT';
+const { createStore, applyMiddleware } = require('redux');
 
-// Actions
-const increment = () => ({ type: INCREMENT });
-const decrement = () => ({ type: DECREMENT });
-
-// Reducer
-const initialState = { count: 0 };
+const initialState = { count: 10 };
 
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case INCREMENT:
-      return { count: state.count + 1 };
-    case DECREMENT:
-      return { count: state.count - 1 };
+    case 'buyCake':
+      return { ...state, count: state.count - 1 };
+    case 'addCake':
+      return { ...state, count: state.count + 1 };
     default:
       return state;
   }
 };
 
-// Create Store
-const store = createStore(counterReducer);
-
-// Counter Component
-const Counter = () => {
-  const count = useSelector((state) => state.count);
-  const dispatch = useDispatch();
-
- 
+const logger = store => next => action => {
+  console.log('Dispatching:', action);
+  const result = next(action);
+  console.log('Next state:', store.getState());
+  return result;
 };
 
+const store = createStore(counterReducer, applyMiddleware(logger));
 
+const simulateUserInput = (action) => {
+  store.dispatch(action);
+};
+
+console.log('Initial State:', store.getState());
+
+simulateUserInput({ type: 'buyCake' });
+simulateUserInput({ type: 'addCake' });
+
+console.log('Final State:', store.getState());
