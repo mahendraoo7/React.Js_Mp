@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.count {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100lvh;
+    width: 200lvh;
+    gap: 20px;
+   
+}
+
+ h1{
+    padding: 20px;
+    border: 4px solid red;
+    cursor: pointer;
+}
+
+button {
+    background-color: black;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+}
