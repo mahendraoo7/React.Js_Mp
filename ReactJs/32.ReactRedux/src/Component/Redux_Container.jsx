@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector , useDispatch } from 'react-redux'
 import { buy_fruits, buy_veggies } from '../redux/Action'
+import '../index.css'
 
 
 const Redux_Container = () => {
@@ -14,13 +15,19 @@ const Redux_Container = () => {
     const dispatch = useDispatch()
 
   return (
-    <div>
-      <h1 className='heading'>This is React_redux </h1>
+    <>
+    <h1 className='heading'>This is React_redux </h1>
+      <div className='align'>
+      <h1 className='cen'>Fruits</h1>
+      <h1 className='cen'>Veggies</h1>
+      </div>
+    <div className='head'>
       <div className='btn'>{FruitsData}</div>
-      <button className='btn' onClick={() => dispatch(buy_fruits())}>Buy Fruits</button>
+      <button className='' onClick={() => dispatch(buy_fruits())}>Buy Fruits</button>
       <div className='btn'>{VeggiesData}</div>
-      <button className='btn' onClick={() => dispatch(buy_veggies())}>Buy Veggies</button>
+      <button className='' onClick={() => dispatch(buy_veggies())}>Buy Veggies</button>
     </div>
+    </>
   )
 }
 
