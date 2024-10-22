@@ -13,13 +13,19 @@ const reduxSlice = createSlice(
                 state.Device += 1 ;
             },
             Decrement : (state) => {
-                state.Device -= 1 ;
+                state.Device = Math.max(0, state.Device -=1);
+            },
+            RESET :(state) => {
+                state.Device = 0;
+            },
+            ADD5 : (state) => {
+                state.Device +=5 
             }
         } 
     }
 )
 
 
-export const {Increment, Decrement} = reduxSlice.actions
+export const {Increment, Decrement, RESET , ADD5} = reduxSlice.actions
 
 export default reduxSlice.reducer

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux'  
-import { Increment,Decrement } from "../Redux/Slice";
+import { Increment,Decrement, RESET , ADD5} from "../Redux/Slice";
 import './toolkit.css'
 
 const ReduxContainer = () => {
@@ -12,9 +12,11 @@ const ReduxContainer = () => {
   return (
     <div>
       <h1>This is React_redux-toolkit </h1>
-      <div>{sliceData}</div>
+      <div className="show">{sliceData}</div>
       <button className='btn' onClick={() => dispatch(Increment())}>Increment</button>
       <button className='btn' onClick={() => dispatch(Decrement())}>Decrement</button>
+      <button className="btn" onClick={() => dispatch(RESET())}> RESET</button>
+      <button className="btn" onClick={() => dispatch(ADD5())}>Add 5</button>
     </div>
   )
 }
