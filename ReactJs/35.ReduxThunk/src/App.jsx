@@ -17,7 +17,10 @@ const App = () => {
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <ul>
         {data.map((item) => (
-          <li key={item.id}>{item.title}</li>
+          <>
+           <li key={item.id}> Id :{item.id}</li>
+           <li key={item.stock}> Title : {item.title}</li>
+          </>
         ))}
       </ul>
     </div>

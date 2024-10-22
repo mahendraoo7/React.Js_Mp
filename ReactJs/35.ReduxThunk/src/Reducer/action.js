@@ -16,7 +16,7 @@ export const fetchDataRequest = () => ({
     return (dispatch) => {
       dispatch(fetchDataRequest());
   
-      fetch('https://jsonplaceholder.typicode.com/posts') // Example API
+      fetch('http://localhost:3000/products') // Example API
         .then((response) => response.json())
         .then((data) => {
           dispatch(fetchDataSuccess(data));
