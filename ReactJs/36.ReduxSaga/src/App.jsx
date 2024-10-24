@@ -22,6 +22,7 @@ const App = () => {
       <ul>
         {data.map((item) => (
           <li key={item.id}>{item.title}</li>
+         
         ))}
       </ul>
     </div>
