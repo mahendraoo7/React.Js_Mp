@@ -6,9 +6,12 @@ const App = () => {
   const dispatch = useDispatch();
   const { loading, data, error } = useSelector((state) => state);
 
+  console.log(data);
+  
+
   // Dispatch the action to fetch data when the component mounts
   useEffect(() => {
-    dispatch(fetchDataRequest());
+    dispatch(fetchDataRequest()); 
   }, [dispatch]);
 
   return (
