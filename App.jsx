@@ -15,6 +15,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
+    
     <div>
       <h1>Simple Redux-Saga Example</h1>
       {loading && <p>Loading...</p>}
