@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import VdLogo from "../assets/vd.png";
 import { NavLink, Outlet } from "react-router-dom";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import "./Navbar.css";
@@ -27,7 +26,6 @@ const Navbar = () => {
               <img
                 id="logo"
                 className="size-16  "
-                src={VdLogo}
                 alt="Not Found"
               />
             </NavLink>
