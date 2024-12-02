@@ -17,6 +17,6 @@ function* watchFetchDataSaga() {
   yield takeEvery('FETCH_DATA_REQUEST', fetchDataSaga);
 }
 
-export default function* rootSaga() {
+export default function* rootSaga() {  
   yield watchFetchDataSaga();
 }
